@@ -7,7 +7,7 @@ import useFetchDataAndTable from "../components/useFetchDataAndTable"
 
 export default function App(){
 
-  const DataTable = useFetchDataAndTable();
+  const DataTable = useFetchDataAndTable(`http://127.0.0.1:5001/post`);
   return (
     <>
       <Nav1/>

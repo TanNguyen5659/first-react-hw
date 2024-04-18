@@ -8,7 +8,7 @@ function useFetchDataAndTable(url) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://127.0.0.1:5001/post`, {
+        const response = await fetch(url, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -19,9 +19,16 @@ function useFetchDataAndTable(url) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const jsonData = await response.json();
-        setData(jsonData);
-        setLoading(false);
+        const contentType = response.headers.get('content-type');
+        
+        if (contentType && contentType.includes('application/json')) {
+          const jsonData = await response.json();
+          setData(jsonData);
+          setLoading(false);
+        } else {
+          const textData = await response.text();
+          throw new Error(`Unexpected response: ${textData}`);
+        }
       } catch (err) {
         setError(err.message);
         setLoading(false);
@@ -46,8 +53,8 @@ function useFetchDataAndTable(url) {
         <tr>
           <th>ID</th>
           <th>Title</th>
-          <th>Content</th>
-          <th>Post ID</th>
+          <th>Body</th>
+          <th>Car ID</th>
         </tr>
       </thead>
       <tbody>
