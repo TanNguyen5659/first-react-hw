@@ -19,7 +19,7 @@ function BootstrapBody() {
             <Button variant="primary">Explore more</Button>
           </Link>
           <Link to="/messi-stats">
-            <Button variant="primary">Messi Stats</Button>
+            <Button variant="secondary">Messi Stats</Button>
           </Link>
         </Card.Body>
       </Card>
