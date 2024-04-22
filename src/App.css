@@ -30,5 +30,8 @@
   .data-table tbody tr:hover {
     background-color: #ddd;
   }
+  .data-container {
+    padding: 2rem;
+  }
   
   

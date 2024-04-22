@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container'; // Import Container component for centering
+import Container from 'react-bootstrap/Container';
 
-function BasicExample() {
+function BootstrapBody() {
   return (
     <Container className="d-flex justify-content-center" style={{ height: '50vh' }}>
       <Card style={{ width: '18rem' }}>
@@ -13,11 +14,14 @@ function BasicExample() {
           <Card.Text>
             Lionel Messi, a footballing genius, has captivated audiences globally with his unparalleled skill and ability to transcend the sport. His remarkable career boasts an array of records and achievements, cementing his status as a true legend of the game.
           </Card.Text>
-          <Button variant="primary">Explore more</Button>
+          {/* Wrap the Button with Link and set the to prop to the relative path for More.jsx */}
+          <Link to="/more">
+            <Button variant="primary">Explore more</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Container>
   );
 }
 
-export default BasicExample;
+export default BootstrapBody;
