@@ -14,20 +14,22 @@ export default function App(){
   
   return (
     <Router>
-      <>
-        <Nav1/>
-        <Header/>
-        <BootstrapBody/>
-        <Agecounter/>
-        <div className="data-container">
-          <h2>Data from Flask Backend:</h2>
-          {DataTable}
-        </div>
-        <Routes>
-          <Route path='/more' element={<ExploreMessi />} />
-        </Routes>
-        <Footer></Footer>
-      </>
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Nav1/>
+            <Header/>
+            <BootstrapBody/>
+            <Agecounter/>
+            <div className="data-container">
+              <h2>Data from Flask Backend:</h2>
+              {DataTable}
+            </div>
+            <Footer/>
+          </>
+        } />
+        <Route path='/more' element={<ExploreMessi />} />
+      </Routes>
     </Router>
   )
 }
