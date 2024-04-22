@@ -7,6 +7,7 @@ import Footer from "../components/footer";
 import Agecounter from "../components/agecounter";
 import useFetchDataAndTable from "../components/useFetchDataAndTable";
 import ExploreMessi from "../pages/more";
+import MessiStats from "../pages/MessiStats"; // Import MessiStats
 
 export default function App(){
 
@@ -29,7 +30,9 @@ export default function App(){
           </>
         } />
         <Route path='/more' element={<ExploreMessi />} />
+        <Route path='/messi-stats' element={<MessiStats />} /> {/* Add new route */}
       </Routes>
     </Router>
   )
 }
+

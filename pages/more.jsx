@@ -1,8 +1,19 @@
 import React from 'react';
-
+import { Nav } from 'react-bootstrap';
 const ExploreMessi = () => {
   return (
     <div>
+            <Nav variant="tabs" defaultActiveKey="/home">
+        <Nav.Item>
+          <Nav.Link href="/">Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/more">More</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/messi-stats">Messi Stats</Nav.Link>
+        </Nav.Item>
+      </Nav>
       <h1>Explore More About Lionel Messi</h1>
       <div>
         <img 
@@ -33,5 +44,6 @@ const ExploreMessi = () => {
     </div>
   );
 };
+
 
 export default ExploreMessi;

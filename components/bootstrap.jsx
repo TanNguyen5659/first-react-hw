@@ -18,6 +18,9 @@ function BootstrapBody() {
           <Link to="/more">
             <Button variant="primary">Explore more</Button>
           </Link>
+          <Link to="/messi-stats">
+            <Button variant="primary">Messi Stats</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Container>
